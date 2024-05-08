@@ -114,6 +114,14 @@ func (bot *Bot) SetCustomClient(c HTTPWrapper) {
 	bot.customClient = c
 }
 
+func (bot *Bot) SetAccessToken(token string) {
+	bot.accessToken.Store(token)
+}
+
+func (bot *Bot) SetTenantAccessToken(token string) {
+	bot.tenantAccessToken.Store(token)
+}
+
 // UnsetCustomClient .
 func (bot *Bot) UnsetCustomClient() {
 	bot.useCustomClient = false
