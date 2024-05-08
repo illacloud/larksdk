@@ -24,6 +24,10 @@ type PostElem struct {
 	ImageKey    *string `json:"image_key,omitempty"`
 	ImageWidth  *int    `json:"width,omitempty"`
 	ImageHeight *int    `json:"height,omitempty"`
+	// For file
+	FileKey  *string `json:"file_key,omitempty"`
+	FileType *string `json:"file_type,omitempty"`
+	FileName *string `json:"file_name,omitempty"`
 }
 
 const (
@@ -31,6 +35,7 @@ const (
 	msgPostLink  = "a"
 	msgPostAt    = "at"
 	msgPostImage = "img"
+	msgPostFile  = "file"
 )
 
 // PostBuf .
@@ -122,6 +127,18 @@ func (pb *MsgPostBuilder) ImageTag(imageKey string, imageWidth, imageHeight int)
 		ImageKey:    &imageKey,
 		ImageWidth:  &imageWidth,
 		ImageHeight: &imageHeight,
+	}
+	pb.CurLocale().Content = append(pb.CurLocale().Content, pe)
+	return pb
+}
+
+// FileTag creates an file tag
+func (pb *MsgPostBuilder) FileTag(fileKey, fileType, fileName string) *MsgPostBuilder {
+	pe := PostElem{
+		Tag:      msgPostFile,
+		FileKey:  &fileKey,
+		FileType: &fileType,
+		FileName: &fileName,
 	}
 	pb.CurLocale().Content = append(pb.CurLocale().Content, pe)
 	return pb

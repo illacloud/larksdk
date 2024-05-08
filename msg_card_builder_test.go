@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-lark/lark/card"
+	"github.com/illacloud/larksdk/card"
 	"github.com/stretchr/testify/assert"
 )
 

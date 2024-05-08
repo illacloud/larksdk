@@ -3,7 +3,7 @@ module github.com/illacloud/larksdk
 go 1.22.2
 
 require (
-	github.com/go-lark/lark v1.14.1
+	github.com/illacloud/larksdk v1.14.1
 	github.com/joho/godotenv v1.5.1
 	github.com/stretchr/testify v1.9.0
 )

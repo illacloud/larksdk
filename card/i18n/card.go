@@ -4,7 +4,7 @@ package i18n
 import (
 	"encoding/json"
 
-	"github.com/go-lark/lark/card"
+	"github.com/illacloud/larksdk/card"
 )
 
 // Block 卡片元素
